@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Directus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dados da Tabela no Directus</h1>
+    <div id="data-container">
+        {% if items %}
+            {% for item in items %}
+                <div class="item">
+                    <p>ID: {{ item.id }}</p>
+                    <p>Nome: {{ item.Name }}</p> <!-- Substitua pelo nome dos campos na sua coleção -->
+                    <p>Descrição: {{ item.description }}</p>
+                    <p>Ativo: {{ item.isActive }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Sem dados para exibir.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
